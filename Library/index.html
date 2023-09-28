@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Book Library</title>
+        <link rel="stylesheet" href="./style.css">
+      
+      </head>
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="container">
+            <div class="box-inner">
+                <div class="book books-1 book-blur"></div>
+                <div class="book books-2 book-blur"></div>
+                <div class="book books-3 book-blur"></div>
+            </div>
+            <div class="box-out">
+                <div class="book books-1" id="book1Btn"></div>
+            </div>
+        </div>
+    
+    <!-- <a href="https://dribbble.com/YancyMin" class="dr-url" target="_blank"><img class="dr" src="https://cdn.dribbble.com/assets/logo-footer-hd-a05db77841b4b27c0bf23ec1378e97c988190dfe7d26e32e1faea7269f9e001b.png" alt=""></a> -->
+    <!-- partial -->
+    
+    <script>
+
+        var btn = document.getElementById("book1Btn");
+        btn.addEventListener("click", function(){
+            window.location.href = "./book1/book1.html"
+        })
+
+    </script>
+
+    </body>
+</html>
+
