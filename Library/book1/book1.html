@@ -14,10 +14,10 @@
 
         </script>
 
-        <div class="description" id="nextDisplay">
+        <div class="description" id="descriptionBtn">
             <h1><b>INTRODUCTION</b></h1>
             <hr>
-            <p>To you my girl (?), love (?), world (?), special one (?) who's enthusiasm reminds me of a Green-Cheeked Conures. Your laughter and positiveness would light up nearly all of the moments we've had together, your bad jokes is what separates you from most. I also appreciate your mood swings as it strengthens my longing for patience. I hope we can conquer any and every challenges thrown at us, every ups and downs we walk through it together, to enjoy the serene beauty of harmony and peace. With this I present you, a web book that acts as a place to store all if not most of our journey, memories, and everything. </p>
+            <p>To you my girl (?), my love (?), my world (?), my special one (?) who's enthusiasm reminds me of a Green-Cheeked Conures. Your laughter and positiveness would light up nearly all of the moments we've had together, your bad jokes is what separates you from most. I also appreciate your mood swings as it strengthens my longing for patience. I hope we can conquer any and every challenges thrown at us, every ups and downs we walk through it together, to enjoy the serene beauty of harmony and peace. With this I present you, a web book that acts as a place to store all if not most of our journey, memories, and everything. </p>
             <br>
             <blockquote>"Let's Commit the Perfect Crime.<br>I'll Steal Your Heart, and You Steal Mine."
                 <br>
@@ -25,6 +25,21 @@
             <br>
             <p>This book is dedicated to my <b>Fransisca Eva Yuliana Dewi</b> as both a memory and a gift.</p>
         </div>
+
+        <script>
+
+            var stayOpen = document.getElementById("descriptionBtn");
+            var descElement = document.querySelector(".description");
+            var covElement = document.querySelector(".cover");
+            var gloElement = document.querySelector(".gloss");
+            stayOpen.addEventListener("click", function() {
+                descElement.classList.toggle("descTransformed");
+                covElement.classList.toggle("coverTransformed");
+                gloElement.classList.toggle(".glossTransformed")
+            })
+
+        </script>
+
     </div>
 
 </body>

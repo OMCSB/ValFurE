@@ -113,6 +113,17 @@ h1{
     transform: translateX(20%);
 }
 
+.descTransformed {
+  transform: translateX(20%);
+}
+
+.coverTransformed {
+  transform: perspective(var(--perspective)) rotateY(-80deg);
+}
+
+.glossTransformed {
+  transform: perspective(var(--perspective)) rotateY(-80deg) translateX(100%) scaleX(5);
+}
 
 
 /* From: https://codepen.io/robjoeol/pen/WmgVvx */
