@@ -1,5 +1,7 @@
 /* Credit to: https://codepen.io/yancy/pen/jpWPGx */
 
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap');
+
 body,
 ol,
 ul,
@@ -38,6 +40,11 @@ body {
     justify-content: center;
     align-items: center;
     width: 100vw;
+}
+
+.container h2{
+    margin-top: 2em;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .box-out {
