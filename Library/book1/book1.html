@@ -2,8 +2,19 @@
 <body>
     <div id="handmaid" class="book">
         <div class="gloss"></div>
-        <img class="cover" src="../book1/img/book-1.png" alt="cover">
-        <div class="description">
+        <img class="cover" id="goToLibrary" src="../book1/img/book-1.png" alt="cover">
+
+        <script>
+
+            var goBackBtn = document.getElementById("goToLibrary");
+
+            goBackBtn.addEventListener("click", function() {
+                window.location.href = "../index.html"
+            })
+
+        </script>
+
+        <div class="description" id="nextDisplay">
             <h1><b>INTRODUCTION</b></h1>
             <hr>
             <p>To you my girl (?), love (?), world (?), special one (?) who's enthusiasm reminds me of a Green-Cheeked Conures. Your laughter and positiveness would light up nearly all of the moments we've had together, your bad jokes is what separates you from most. I also appreciate your mood swings as it strengthens my longing for patience. I hope we can conquer any and every challenges thrown at us, every ups and downs we walk through it together, to enjoy the serene beauty of harmony and peace. With this I present you, a web book that acts as a place to store all if not most of our journey, memories, and everything. </p>
