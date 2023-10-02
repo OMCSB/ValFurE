@@ -1,46 +1,133 @@
-<link rel="stylesheet" href="../book1/book1-styles.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a(non)</title>
+    <link rel="stylesheet" href="../book1/book1-styles.css">
+</head>
 <body>
-    <div id="handmaid" class="book">
-        <div class="gloss"></div>
-        <img class="cover" id="goToLibrary" src="../book1/img/book-1.png" alt="cover">
 
-        <script>
+    <audio id="siteAudio" src="../book1/audio/savageGarder-IKILY.mp3"></audio>
 
-            var goBackBtn = document.getElementById("goToLibrary");
+    <div id="handmaid" class="book hover">
+        
+        <!-- Cover 1 -->
+        <div id="c1" class="paper">
+            <div class="gloss"></div>
+            <div class="coverFront">
+                <img id="goToLibrary" src="../book1/img/book-1.png" alt="cover">
+            </div>
+            <script>
 
-            goBackBtn.addEventListener("click", function() {
-                window.location.href = "../index.html"
-            })
+                var goBackBtn = document.getElementById("goToLibrary");
 
-        </script>
+                goBackBtn.addEventListener("click", function() {
+                    window.location.href = "../index.html"
+                })
 
-        <div class="description" id="descriptionBtn">
-            <h1><b>INTRODUCTION</b></h1>
-            <hr>
-            <p>To you my girl (?), my love (?), my world (?), my special one (?) who's enthusiasm reminds me of a Green-Cheeked Conures. Your laughter and positiveness would light up nearly all of the moments we've had together, your bad jokes is what separates you from most. I also appreciate your mood swings as it strengthens my longing for patience. I hope we can conquer any and every challenges thrown at us, every ups and downs we walk through it together, to enjoy the serene beauty of harmony and peace. With this I present you, a web book that acts as a place to store all if not most of our journey, memories, and everything. </p>
-            <br>
-            <blockquote>"Let's Commit the Perfect Crime.<br>I'll Steal Your Heart, and You Steal Mine."
-                <br>
-                - A cringeworthy quote I found on the Internet for you and us</blockquote>
-            <br>
-            <p>This book is dedicated to my <b>Fransisca Eva Yuliana Dewi</b> as both a memory and a gift.</p>
+            </script>
+            <div class="coverBack">
+                <img src="../book1/img/book-1-cover.png" alt="cover back">
+            </div>
+        </div>
+        
+
+        <!-- Page 1 -->
+        <div id="p1" class="papers">
+            <div class="front pg1">
+                <div class="description" id="fPage1">
+                    <h1><b>INTRODUCTION</b></h1>
+                    <hr>
+                    <p>To you my girl (?), my love (?), my world (?), my special one (?) who's enthusiasm reminds me of a Green-Cheeked Conures. Your laughter and positiveness would light up nearly all of the moments we've had together, your bad jokes is what separates you from most. I also appreciate your mood swings as it strengthens my longing for patience. I hope we can conquer any and every challenges thrown at us, every ups and downs we walk through it together, to enjoy the serene beauty of harmony and peace. With this I present you, a web book that acts as a place to store all if not most of our journey, memories, and everything. </p>
+                    <br>
+                    <blockquote>"Let's Commit the Perfect Crime.<br>I'll Steal Your Heart, and You Steal Mine."
+                        <br>
+                        - A cringeworthy quote I found on the Internet for you and us</blockquote>
+                    <br>
+                    <p>This book is dedicated to my <b>Fransisca Eva Yuliana Dewi</b> as both a memory and a gift.</p>
+                </div>
+
+                
+            </div>
+
+            <div class="back hover">
+
+                <div class="descriptionBack back-content" id="bPage1">
+
+                    <h1><b>CLOSE</b></h1>
+                    <hr>
+                    <video id="siteVideo" src="../book1/img/vidIG.mp4"></video>
+
+
+                </div>
+
+            </div>
         </div>
 
-        <script>
-
-            var stayOpen = document.getElementById("descriptionBtn");
-            var descElement = document.querySelector(".description");
-            var covElement = document.querySelector(".cover");
-            var gloElement = document.querySelector(".gloss");
-            stayOpen.addEventListener("click", function() {
-                descElement.classList.toggle("descTransformed");
-                covElement.classList.toggle("coverTransformed");
-                gloElement.classList.toggle(".glossTransformed")
-            })
-
-        </script>
-
+        
     </div>
 
+    
+
+    <script>
+
+        var goNext = document.getElementById("fPage1");
+        var goBack = document.getElementById("bPage1");
+        var bookCover = document.querySelector(".coverFront");
+        var getBook = document.getElementById("handmaid");
+        var getAudio = document.getElementById("siteAudio");
+        var getVideo = document.getElementById("siteVideo");
+
+        var coverPage = document.querySelector("#c1");
+        var paper1 = document.querySelector("#p1");
+        
+        let currPage = 1;
+        let noOfPaper = 2;
+        let maxLocation = noOfPaper + 1;
+
+        goNext.addEventListener("click", nextPage);
+        goBack.addEventListener("click", prevPage);
+        getAudio.addEventListener("ended", prevPage);
+
+        function openBook(){
+            getBook.style.transform = "translateX(50%)";
+        }
+
+        function closeBook(){
+            getBook.style.transform = "translateX(0)"
+        }
+
+        function nextPage(){
+            openBook();
+            paper1.classList.add("flipped");
+            // bookCover.style.transform = "rotateY(-180deg)";
+            coverPage.classList.add("flip");
+            // coverPage.style.transform = "rotateY(-180deg)";
+            getBook.classList.remove("hover");
+            paper1.style.zIndex = 201;
+            getAudio.play();
+            getVideo.play();
+            getVideo.loop = true;
+            
+            
+        }
+
+        function prevPage(){
+            closeBook();
+            paper1.classList.remove("flipped");
+            coverPage.classList.remove("flip");
+            bookCover.style.transition = "transform 2s";
+            getBook.classList.add("hover")
+            paper1.style.zIndex = 3;
+            getAudio.pause();
+            getAudio.currentTime = 0;
+            getVideo.pause();
+            getVideo.currentTime = 0;
+        }
+
+    </script>
 </body>
+</html>
+
   <!-- Credits to: https://codepen.io/robjoeol/pen/WmgVvx -->
